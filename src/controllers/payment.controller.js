@@ -55,7 +55,7 @@ for (let i = 0; i < req.body.cart.length; i++) {
           quantity: 1
         },
       ], */
-      notification_url: "https://6f21-181-177-42-95.ngrok-free.app/webhook",
+      notification_url: "https://mercadopagos.onrender.com/webhook",
       back_urls: {
         success: "http://localhost:3001/new-ecomerce",
         // pending: "https://e720-190-237-16-208.sa.ngrok.io/pending",
