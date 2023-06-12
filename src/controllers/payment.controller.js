@@ -1,10 +1,10 @@
 import mercadopage from "mercadopago";
-
+import { ACCESS_TOKEN } from "../../config.js";
 
 export const createOrder = async (req, res) => {
-console.log("Ingresa a BACCK", req.body.cart);
+
   mercadopage.configure({
-    access_token: 'TEST-7234572348192236-060309-ef666eb113bab9517379859d6f474bc4-1390122826',
+    access_token: ACCESS_TOKEN,
   });
 
   for (let i = 0; i < req.body.cart.length; i++) {
@@ -30,7 +30,7 @@ for (let i = 0; i < req.body.cart.length; i++) {
     
   }
 
-console.log("carrito",req.body.cart);
+
 
   try {
     const result = await mercadopage.preferences.create({
@@ -63,8 +63,7 @@ console.log("carrito",req.body.cart);
       },
     });
 
-    console.log("NOTIFICATION_URL EN BACK",result.notification_url);
-    console.log("CUERPO DEL BACK", result.body);
+
 
     // res.json({ message: "Payment creted" });
     res.json(result.body);
@@ -76,7 +75,7 @@ console.log("carrito",req.body.cart);
 export const receiveWebhook = async (req, res) => {
   try {
     const payment = req.query;
-    console.log("PAYMENT EN WEBHOOK",payment);
+   
     if (payment.type === "payment") {
       const data = await mercadopage.payment.findById(payment["data.id"]);
    /*    console.log("Guardo en BD",data.body.status);
@@ -86,7 +85,7 @@ export const receiveWebhook = async (req, res) => {
 
  
   } catch (error) {
-    console.log(error);
+
     return res.status(500).json({ message: "Something goes wrong" });
   }
 };
