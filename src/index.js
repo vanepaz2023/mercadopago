@@ -5,6 +5,7 @@ import cors from 'cors'
 import {ACCESS_TOKEN, PORT} from '../config.js'
 import paymentRoutes from "./routes/payment.routes.js";
 
+
 const app = express();
 app.use(express.json());
 app.use(cors()); // Habilitar CORS para todas las solicitudes

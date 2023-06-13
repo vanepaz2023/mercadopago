@@ -1,10 +1,17 @@
 import mercadopage from "mercadopago";
 import { ACCESS_TOKEN } from "../../config.js";
+import dotenv from 'dotenv';
+import { config } from 'dotenv';
+
 
 export const createOrder = async (req, res) => {
 
+  dotenv.config();
+config(); 
+
   mercadopage.configure({
-    access_token: 'TEST-7234572348192236-060309-ef666eb113bab9517379859d6f474bc4-1390122826',
+    //access_token: 'TEST-7234572348192236-060309-ef666eb113bab9517379859d6f474bc4-1390122826',
+    access_token: process.env.ACCESS_TOKEN
   });
 
   for (let i = 0; i < req.body.cart.length; i++) {
