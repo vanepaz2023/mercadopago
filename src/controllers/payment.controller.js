@@ -57,7 +57,7 @@ for (let i = 0; i < req.body.cart.length; i++) {
       ], */
       notification_url: "https://mercadopagos.onrender.com/webhook",
       back_urls: {
-        success: "http://localhost:3001/new-ecomerce",
+        success: "https://san2025chez.github.io/new-ecomerce/",
         // pending: "https://e720-190-237-16-208.sa.ngrok.io/pending",
         // failure: "https://e720-190-237-16-208.sa.ngrok.io/failure",
       },
