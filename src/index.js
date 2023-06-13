@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import path from "path";
 import cors from 'cors'
-import {PORT} from '../config.js'
+import {ACCESS_TOKEN, PORT} from '../config.js'
 import paymentRoutes from "./routes/payment.routes.js";
 
 const app = express();
