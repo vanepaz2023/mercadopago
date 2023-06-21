@@ -51,6 +51,10 @@ for (let i = 0; i < req.body.cart.length; i++) {
             number:  Number(req.body.user.phone)
         },
       },
+      payment_methods: {
+   
+        installments: 1
+    },
    /*    items: [
         {
    
